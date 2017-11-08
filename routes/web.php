@@ -11,3 +11,8 @@ route::get('/posts/{post}', 'PostsController@show');
 
 // Comment routes
 route::post('/posts{post}/comments', 'CommentsController@store');
+
+
+// Usersystem routes
+route::get('/register', 'RegistrationController@create');
+route::get('/login', 'SessionsController@create');
