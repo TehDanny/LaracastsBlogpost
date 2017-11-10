@@ -23,13 +23,8 @@
             <button type="submit" class="btn btn-default">Publish</button>
         </div>
 
-        {{-- This isn't necessary in laravel 5.5
-        @include ('layouts.errors') --}}
+        @include ('layouts.errors')
     </form>
-
-
-
-
 </div>
 
 @endsection

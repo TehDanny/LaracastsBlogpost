@@ -7,6 +7,11 @@ use App\Post;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
         $posts = Post::latest()->get();
@@ -33,7 +38,11 @@ class PostsController extends Controller
         ]);
 
         // with fillable or guarded in model
-        Post::create(request(['title', 'body']));
+        Post::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ]);
 
         return redirect('/');
     }

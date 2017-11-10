@@ -26,11 +26,11 @@
                 <form method="POST" action='/posts/{{ $post->id }}/comments'>
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <textarea class="form-control" name="body" placeholder="Your comment here..."></textarea>
+                        <textarea class="form-control" name="body" placeholder="Your comment here..." required></textarea>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Add comment</button>
+                        <button type="submit" class="btn btn-primary" required>Add comment</button>
                     </div>
                 </form>
             </div>
