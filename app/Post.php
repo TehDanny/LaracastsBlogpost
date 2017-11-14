@@ -15,7 +15,7 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo(user::class);
+        return $this->belongsTo(User::class);
 
         // to get the name of the poster: $post->user->name
     }
